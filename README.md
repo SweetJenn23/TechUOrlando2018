@@ -1,6 +1,6 @@
 # Hyperledger Fabric and Hyperledger Composer on LinuxONE
 
-###Note: After SHARE Winter 2018 in Sacramento. Please use the link below to conduct this lab.
+###Note: To run this lab after TechU in Orlando, please use the link below.
 
 https://github.com/IBM/hyperledger-fabric-on-linux-one
 
