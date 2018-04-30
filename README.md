@@ -93,15 +93,15 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Verify the environment pre-requisites are installed.](images/verifyPreReqs.png)
 
-5. To be ready to build your first blockchain application, you'll need to get everything running. This has been scripted for you. In your terminal, enter `ls` to see what is in your home directory. You should find a script called *SHARESacramentoBlockchainScript.sh*.
+5. To be ready to build your first blockchain application, you'll need to get everything running. This has been scripted for you. In your terminal, enter `ls` to see what is in your home directory. You should find a script called *TechUOrlandoBlockchainScript.sh*.
 
    ![View setup script.](images/setupScript.png)
 
-6. Take a look at the script to see the commands that will be run to start up your blockchain environment by issuing `cat SHARESacramentoBlockchainScript.sh`.
+6. Take a look at the script to see the commands that will be run to start up your blockchain environment by issuing `cat TechUOrlandoBlockchainScript.sh`.
 
    ![View setup script.](images/viewScript.png)
 
-7. Enter `./SHARESacramentoBlockchainScript.sh` to run the script.
+7. Enter `./TechUOrlandoBlockchainScript.sh` to run the script.
 
    ![Results of successful completion of setup script.](images/finishedSetupScript.png)
 
@@ -169,7 +169,7 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
     ![Select browse.](images/SelectBrowse.png)
 
-13. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *README.md* and **Click** *Open*.
+13. In the file explorer window, navigate to where the *code/* directory is on your desktop. **Select** *README.md* and **Click** *Open*.
    ![Select README.md](images/SelectREADME.png)
 
 14. **Select** *Add*.
