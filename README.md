@@ -132,20 +132,23 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 #### Importing the components of your blockchain application
 
-1. On your workstation desktop, you will find a folder named `code`. This folder contains the artifacts you will need for the following steps.
+1. We need to move the code you'll be working with to your workstation desktop. To do this, open a terminal and navigate to the desktop directory, **cd Desktop**.
 
-2. Go back to your browser that has Composer Playground open. If you've closed it, you can open it in your browser by entering `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address.
+2. In the *Desktop* directory, use the following to copy the code from GitHub to your workstation. `svn export https://github.com/SweetJenn23/TechUOrlando2018/trunk/code`. This creates a code directory on your desktop.
+![Copy code to your desktop.](images/CopyCode.png)
+
+3. Go back to your browser that has Composer Playground open. If you've closed it, you can open it in your browser by entering `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address.
 
 
 * **Note:** You will need to view the browser in Full Screen (fully expanded) mode to be able to access everything and prevent issues with inability to scroll on certain screens.
 
 ![View Composer Playground.](images/ComposerPlaygroundUI2.png)
 
-3. Select **Deploy a new business network** under *Connection: Web Browser*.
+4. Select **Deploy a new business network** under *Connection: Web Browser*.
 
 ![Select Deploy a new business network.](images/SelectImportReplace.png)
 
-4. Complete the *BASIC INFORMATION*.
+5. Complete the *BASIC INFORMATION*.
 
 * Give your new Business Network a name: **blockchain-journery**
 
@@ -153,55 +156,55 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Complete the Basic Information](images/basicinfo.png)
 
-5. Scroll until you can see *Choose a Business Network Definition to start with:* and select **empty-business-network** and **Deploy**.
+6. Scroll until you can see *Choose a Business Network Definition to start with:* and select **empty-business-network** and **Deploy**.
    ![Click empty-business-network and Deploy.](images/EmptyBusinessNetwork.png)
 
-6. * From *My Wallet* select **Connect now** to go into your business network.
+7. * From *My Wallet* select **Connect now** to go into your business network.
 
 ![Select Connect now.](images/ConnectNow.png)
 
-7. Select **Add a File**.
+8. Select **Add a File**.
 
     ![Select Add a File.](images/AddFile.png)
 
 
-8. From the *Add a file* pop-up dialog, select **browse**.
+9. From the *Add a file* pop-up dialog, select **browse**.
 
     ![Select browse.](images/SelectBrowse.png)
 
-13. In the file explorer window, navigate to where the *code/* directory is on your desktop. **Select** *README.md* and **Click** *Open*.
+10. In the file explorer window, navigate to where the *code/* directory is on your desktop. **Select** *README.md* and **Click** *Open*.
    ![Select README.md](images/SelectREADME.png)
 
-14. **Select** *Add*.
+11. **Select** *Add*.
    ![Select Add.](images/AddREADME.png)
 
-15. On the *Current file will be replaced* dialog, **select** *Replace*.
+12. On the *Current file will be replaced* dialog, **select** *Replace*.
 
 ![Select Add.](images/READMEReplace.png)
 
-12. Let's keep adding the files to the Composer Playground.  **Repeat steps 11-15 to add the following files**:
+13. Let's keep adding the files to the Composer Playground.  **Repeat steps 8-12 to add the following files**:
 
 * *org.acme.sample.cto* — This is located in the models folder. In this exercise you'll use this file to create a model for your asset and transactions. You could also create participants in this file. This is similar to creating a Java class and defining what you would need in the class.
 * *logic.js* — This is located in the lib folder. This is a JavaScript file that becomes the brains of your application. In this file is code, your smart contract, that defines how a transaction can happen. This is similar to Java methods.
 * **Add last:** *permissions.acl* — This is where you would limit permissions for participants in a blockchain network.
 
-13. Your files are all now loaded into Composer Playground. **Click** *Update* on the left side of the browser. 
+14. Your files are all now loaded into Composer Playground. **Click** *Update* on the left side of the browser. 
 
 ![Click Deploy.](images/InitialDeploy.png)
 
 #### Creating your blockchain application
 
-14. Click on **Model File**.
+15. Click on **Model File**.
 
 ![Click Model File](images/SelectModelFile.png)
 
-15. Click in the **editor** on the right to begin writing your models. 
+16. Click in the **editor** on the right to begin writing your models. 
 
 * NOTE: **DO** **NOT** modify the namespace during the lab.
 
   ![Click in the editor](images/ClickEditor.png)
 
-16. On a new line, give your asset `Sensor` the following attributes.
+17. On a new line, give your asset `Sensor` the following attributes.
 
 * Note: a small "o" is used as a bullet in the model.
 
@@ -219,7 +222,7 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Sensor model](images/SensorModel.png)
 
-17. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
+18. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
 
 * `--> Sensor gauge` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
@@ -229,7 +232,7 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Create SetSensorTemp model](images/SetSensorTempModel.png)
 
-18. Build your `ChangeThermostatTemp` transaction model. Add the following:
+19. Build your `ChangeThermostatTemp` transaction model. Add the following:
 
 * `--> Sensor thermostat` — The transaction will need to put data into the `Sensor` asset for the thermostat. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
@@ -239,7 +242,7 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
-19. Enter the following values to build your `CompareWeather` transaction model:
+20. Enter the following values to build your `CompareWeather` transaction model:
 
 * `--> Sensor recommend` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 * `o Double outsideTemp` — Looking at the [WeatherUnderground.com API](https://www.wunderground.com/weather/api/d/docs?d=data/conditions) for Conditions, you can see all of the possible data that the call could return. Based on the data, it was decided to take the actual outside temperature and the feels like temperature to give a recommendation on thermostat settings. This variable stores the value passed into it via NodeRed from Weather.com for the outside temperature.  The model on the API page shows up whether the data is returned in Celsius or Fahrenheit and its variable type. In this exercise we will use Celsius.
@@ -250,13 +253,13 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![create CompareWeather model](images/CompareWeatherModel.png)
 
-20. Click on the **Script File** tab.
+21. Click on the **Script File** tab.
 
 ![Click Script File](images/ClickScriptFile.png)
 
 
 
-21. **Review the code in the editor. **Verify that your variable names match the variable names here.  Capitalization does matter! If names don't match, you'll have errors. 
+22. **Review the code in the editor. **Verify that your variable names match the variable names here.  Capitalization does matter! If names don't match, you'll have errors. 
 
 * Any guesses what the code is doing for each transaction?
 
@@ -264,17 +267,17 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 #### Test application code
 
-22. Click on the **Test** tab at the top to try out your code.
+23. Click on the **Test** tab at the top to try out your code.
 
 ![Click Test](images/ClickTest.png)
 
-23. Notice that in this particular case because we have no participants, the **Test** tab has opened to the **Asset** menu on the left. You must have an asset to be able to run any of the transactions.
+24. Notice that in this particular case because we have no participants, the **Test** tab has opened to the **Asset** menu on the left. You must have an asset to be able to run any of the transactions.
 
 * Click **Create New Asset**.
 
   ![Click Create New Asset](images/CreateNewAsset.png)
 
-24. Create an example asset to test your code by filling in the following information:
+25. Create an example asset to test your code by filling in the following information:
 
 * `"teamID": "teamID:**xxx**"` where ** **xxx** ** is any team number you'd like.
 
@@ -290,19 +293,19 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Create asset](images/NewAssetValues.png)
 
-25. Click **Create New**.
+26. Click **Create New**.
 
 ![Click Create New](images/ClickCreateNew.png)
 
-26. Once your **Team** asset is created it should show in the registry as shown below.
+27. Once your **Team** asset is created it should show in the registry as shown below.
 
 ![Asset registry](images/Team01Asset.png)
 
-27. You're ready to run your first transaction. **Click** on *Submit Transaction*.
+28. You're ready to run your first transaction. **Click** on *Submit Transaction*.
 
 ![Click Submit Transaction](images/ClickSubmitTransaction.png)
 
-28. The **Submit Transaction** dialog will open a new window. 
+29. The **Submit Transaction** dialog will open a new window. 
 
 * Make sure that the **Transaction Type** is set to `SetSensorTemp`.
 
@@ -314,23 +317,23 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Submit SetSensorTemp](images/SetSensorTempTran.png)
 
-29. If you submitted the transaction with your correct team ID, then you should have a transaction showing under *All Transactions*. **Click view record** to see the data you entered in the prior step. Congratulations! You've now completed a transaction. :thumbsup:
+30. If you submitted the transaction with your correct team ID, then you should have a transaction showing under *All Transactions*. **Click view record** to see the data you entered in the prior step. Congratulations! You've now completed a transaction. :thumbsup:
 
 ![Transaction Registry](images/TransactionRegistry.png)
 
-30. Verify that `SetSensorTemp` updated the `sensorTemp`value in your asset. Click **Sensor**.
+31. Verify that `SetSensorTemp` updated the `sensorTemp`value in your asset. Click **Sensor**.
 
 ![Click Team](images/ClickSensor.png)
 
-31. Check the `sensorTemp` value. Does it have the new value from the `SetSensorTemp` transaction?
+32. Check the `sensorTemp` value. Does it have the new value from the `SetSensorTemp` transaction?
 
 ![Check sensorTemp value](images/VerifySensorTemp.png)
 
-32. Let's do another transaction. Select **Submit Transaction**.
+33. Let's do another transaction. Select **Submit Transaction**.
 
 ![Select Submit Transaction](images/SubmitTransaction2.png)
 
-33. This time let's run, `ChangeThermostatTemp`. 
+34. This time let's run, `ChangeThermostatTemp`. 
 
 * In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
   ![Select ChangeThermostatTemp](images/SelectChangeThermostat.png)
@@ -355,25 +358,25 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Asset does not exist error message](images/TeamIDError.png)
 
-34. Verify that the last transaction updated your asset. Click **Sensor**.
+35. Verify that the last transaction updated your asset. Click **Sensor**.
 
 ![Click Sensor](images/ClickSensor2.png)
 
-35. Verify that the `thermostatTemp` attribute for your Team has been updated to the value you gave successsfully in the `ChangeThermostatTemp` transaction.
+36. Verify that the `thermostatTemp` attribute for your Team has been updated to the value you gave successsfully in the `ChangeThermostatTemp` transaction.
 
 * **Note**: In step 40, you can verify that the thermostat was originally set to 20 and is now set to 16.
 
   ![Verify thermostatTemp value](images/VerifyThermostatTemp.png)
 
-36. Time to work with the `CompareWeather` transaction. Click **Submit Transaction**.
+37. Time to work with the `CompareWeather` transaction. Click **Submit Transaction**.
 
 ![Click Submit Transaction](images/SubmitTransaction3.png)
 
-37. Select **CompareWeather** from the *Transaction Type* drop down.
+38. Select **CompareWeather** from the *Transaction Type* drop down.
 
 ![Select CompareWeather](images/Part1_Step36.png)
 
-38. Complete the **CompareWeather** transaction.
+39. Complete the **CompareWeather** transaction.
 
 * Modify the JSON, `"recommend": "resource:org.acme.sample.Sensor#xxxx"`— Replace **xxxx** with your team ID.
 
@@ -385,19 +388,19 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
   ![Complete CompareWeather](images/CompareWeatherTran.png)
 
-39. Verify that your transaction is showing in the Transaction Registry.
+40. Verify that your transaction is showing in the Transaction Registry.
 
 ![Transaction Registry](images/TransactionRegistry3.png)
 
-40. Click on **Sensor**. 
+41. Click on **Sensor**. 
 
 ![Click Sensor](images/ClickSensor3.png)
 
-41. Verify there is now a message in the `recommendation`variable in your Team asset and that the `thermostatValue` has been updated to the recommended value.
+42. Verify there is now a message in the `recommendation`variable in your Team asset and that the `thermostatValue` has been updated to the recommended value.
 
 ![Team asset recommendation value](images/VerifyRecommendation.png)
 
-42. Continue testing your code for all scenarios to understand what your contract(s) can do. The hints to the remaining scenarios are as follows: (Yes, you'll have to look at the Script File under the Define Tab to figure out the criteria.)
+43. Continue testing your code for all scenarios to understand what your contract(s) can do. The hints to the remaining scenarios are as follows: (Yes, you'll have to look at the Script File under the Define Tab to figure out the criteria.)
 
 * ChangeThemostatTemp:
   - [ ] A successful transaction where the `thermostatValue` is updated in the Sensor asset.
@@ -414,23 +417,23 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 #### Deploy application to Hyperledger Fabric
 
-43. Back in your browser where Hyperledger Composer Playground is running, **click** the *Define* tab and then **click** *Export* to save your code to your desktop. This is a safety measure. Export saves all of the indivudual files we imported at the beginning of Part 2 into a compressed file called a business network archive (.bna).
+44. Back in your browser where Hyperledger Composer Playground is running, **click** the *Define* tab and then **click** *Export* to save your code to your desktop. This is a safety measure. Export saves all of the indivudual files we imported at the beginning of Part 2 into a compressed file called a business network archive (.bna).
 
 ![Click Export](images/ClickExport.png)
 
-44. In the pop-up dialog, **choose** your directory location and **click** *Save*.
+45. In the pop-up dialog, **choose** your directory location and **click** *Save*.
 
 ![Click Save File.](images/SaveFile2.png)
 
-45. In the upper right corner of your browser, **select**  *admin* and **click** *My Business Networks*.
+46. In the upper right corner of your browser, **select**  *admin* and **click** *My Business Networks*.
 
 ![Select admin and logout.](images/ClickLogout.png)
 
-46. In the middle of the page, **click** *Deploy a new business network* under the *Connection: hlfv1* business network.
+47. In the middle of the page, **click** *Deploy a new business network* under the *Connection: hlfv1* business network.
 
 ![Select Create ID card.](images/DeployNetwork.png)
 
-47. Complete the fields under *Basic Information* and then **click** *Drop here to upload or browse*.
+48. Complete the fields under *Basic Information* and then **click** *Drop here to upload or browse*.
 
 * Business Network: `hlfv1-blockchain-journey`
 * Description: "Blockchain Journey network deployed to hlfv1"
@@ -438,11 +441,11 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 ![Select Hyperledger Fabric v1.0.](images/DeployToHLFV1.png)
 
-48. Navigate to where you saved your blockchain-journey.bna in step 49. **Select** blockchain-journey.bna from its directory and **click** *Open*.
+49. Navigate to where you saved your blockchain-journey.bna in step 49. **Select** blockchain-journey.bna from its directory and **click** *Open*.
 
 ![Enter the information in the Composer Playground Profile.](images/OpenBlockchainJourney.png)
 
-49. Scroll to the bottom of the page and complete the following: 
+50. Scroll to the bottom of the page and complete the following: 
 
 * **Select** *ID and Secret*.
 * **Create** an *Enrollment ID* of `admin`.
@@ -451,41 +454,41 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 ![Create the credentials for the ID card.](images/IDCardCreds.png)
 
-50. Scroll up to the top and **click** *Deploy* on the right side. 
+51. Scroll up to the top and **click** *Deploy* on the right side. 
 
 ![Click Deploy a new business network.](images/ClickDeploy2.png)
 
-51. Under *Connection: hlfv1*, find your newly deployed network *hlfv1-blockchain-journey*. **Click** *Connect now*.
+52. Under *Connection: hlfv1*, find your newly deployed network *hlfv1-blockchain-journey*. **Click** *Connect now*.
 
 ![Fill in the values.](images/journeydeploy.png)
 
-52. Back in your terminal, enter `docker ps -a` . You can see there is now a new container running where Composer Playground has deployed code to the Hyperledger Fabric.
+53. Back in your terminal, enter `docker ps -a` . You can see there is now a new container running where Composer Playground has deployed code to the Hyperledger Fabric.
 
 ![View Hyperledger Composer Playground container.](images/PlaygroundContainer.png)
 
-53. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
+54. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
 
 #### Generating API
 
-54. In your terminal, issue the following command to start the API rest server:
+55. In your terminal, issue the following command to start the API rest server:
 
     * `nohup composer-rest-server -c admin@hlfv1-blockchain-journey -n always -w true >/home/bcuser/playground/rest.stdout 2>/home/bcuser/playground/rest.stderr & disown`
 
       ![Start your API rest server.](images/StartRestServer.png)
 
-55. Verify the rest server process is running. `ps -ef|grep rest`
+56. Verify the rest server process is running. `ps -ef|grep rest`
 
     ![Verify the rest server is running.](images/VerifyRestServer.png)
 
-56. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest. You should see a page like the one shown.
+57. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest. You should see a page like the one shown.
 
     ![View your REST APIs.](images/RestAPI.png)
 
-57. Expand the different methods to see the various calls and parameters you can make through REST API. You can also test the API in this browser to learn how to form the API and see the responses.
+58. Expand the different methods to see the various calls and parameters you can make through REST API. You can also test the API in this browser to learn how to form the API and see the responses.
 
     ![Test your API.](images/TestAPI.png)
 
-58. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
+59. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
 
 
 
