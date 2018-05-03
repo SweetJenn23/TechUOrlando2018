@@ -60,7 +60,7 @@ For this lab, we will simulate a thermostat and a temperature gauge to provide u
 
 ### Part 1 - Setup your LinuxONE guest
 
-In this section of the lab, you will use PuTTy to connect to your LinuxONE guest, setup your blockchain environment and verify everything is running. Your guest is a basic Ubuntu 16.04.3 server running on an IBM z13 server residning in the Washington Systems Center in Herndon, Virginia. You can verify your Ubuntu version the command, `uname -a` , once you're logged into your guest.
+In this section of the lab, you will use PuTTy to connect to your LinuxONE guest, setup your blockchain environment and verify everything is running. Your guest is a basic Ubuntu 16.04.3 server running on an IBM z13 server residing in the Washington Systems Center in Herndon, Virginia. You can verify your Ubuntu version the command, `uname -a` , once you're logged into your guest.
 
 #### Access your LinuxONE guest
 
@@ -150,7 +150,7 @@ In this section of the lab, you will use PuTTy to connect to your LinuxONE guest
 
 5. Complete the *BASIC INFORMATION*.
 
-* Give your new Business Network a name: **blockchain-journery**
+* Give your new Business Network a name: **blockchain-journey**
 
 * Describe what your Business Network will be used for: **Creating my first blockchain network.**
 
